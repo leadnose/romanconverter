@@ -28,6 +28,17 @@ public class RomanConverterTest {
     public void testNullFail() {
         RomanConverter.romanToDecimal(null);
     }
-    
+
+    @Test
+    public void simpleConvert1() {
+        int i = RomanConverter.romanToDecimal("I");
+        assertEquals(i, 1);
+    }
+
+    @Test
+    public void simpleConvert2() {
+        int i = RomanConverter.romanToDecimal("II");
+        assertEquals(i, 2);
+    }
 
 }
