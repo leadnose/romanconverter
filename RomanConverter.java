@@ -43,13 +43,14 @@ public class RomanConverter {
 
       @param roman The string to be converted. May be in either upper
       or lower case, and may contain whitespace before or after the numeral.
+      @return the decimal value of the roman numeral
       @throws IllegalArgumentException if roman is null, or is not recognized as a roman numeral
       @see http://en.wikipedia.org/wiki/Roman_numerals
 
      */
     public static int romanToDecimal(String roman) throws IllegalArgumentException {
 
-        /* First, check that the string looks like a roman numeral */
+        // First, check that the string is not null and looks like a roman numeral
 
         final String romanRegex = "(I|V|X|L|C|D|M)+";
 
@@ -125,6 +126,7 @@ public class RomanConverter {
                         System.err.println(e);
                     }
                 }
+                System.exit(0);
             } else {
                 System.err.println("You should provide 0 or 1 arguments.");
                 System.exit(1);
