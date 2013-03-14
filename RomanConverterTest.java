@@ -1,6 +1,7 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
-
+import java.util.Scanner;
+import java.io.*;
 
 public class RomanConverterTest {
 
@@ -11,12 +12,12 @@ public class RomanConverterTest {
 
     @Test
     public void testLanguageOk1 () {
-        RomanConverter.romanToDecimal("IVXLCDMMMXD");
+        RomanConverter.romanToDecimal("MDCLXVI");
     }
 
     @Test
     public void testLanguageOk2 () {
-        RomanConverter.romanToDecimal("llmcxmimdv");
+        RomanConverter.romanToDecimal("mdclxvi");
     }
 
     @Test(expected=IllegalArgumentException.class)
@@ -39,6 +40,32 @@ public class RomanConverterTest {
     public void simpleConvert2() {
         int i = RomanConverter.romanToDecimal("II");
         assertEquals(i, 2);
+    }
+
+    @Test
+    public void oneToThousandNormal() throws FileNotFoundException {
+        File file = new File("one-to-thousand-roman-normal.txt");
+        Scanner scanner = new Scanner(file);
+        int i = 1;
+        while (scanner.hasNext()) {
+            String line = scanner.nextLine();
+            int n = RomanConverter.romanToDecimal(line);
+            assertEquals(i, n);
+            i++;
+        }
+    }
+
+    @Test
+    public void oneToThousandOldStyle() throws FileNotFoundException {
+        File file = new File("one-to-thousand-roman-old-style.txt");
+        Scanner scanner = new Scanner(file);
+        int i = 1;
+        while (scanner.hasNext()) {
+            String line = scanner.nextLine();
+            int n = RomanConverter.romanToDecimal(line);
+            assertEquals(i, n);
+            i++;
+        }
     }
 
 }
