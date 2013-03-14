@@ -1,0 +1,9 @@
+A simple program to convert roman numerals to their decimal
+equivalents. May also convert strings that aren't sensible roman
+numerals, such as XIIIII, which would be written as XV normally. Can
+also be used as a library.
+
+With 1 argument, the argument is converted from roman to decimal and
+printed to standard output. With 0 arguments, roman numerals are read
+from standard input one per line, and converted and printed to
+standard output.

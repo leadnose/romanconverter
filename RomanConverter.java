@@ -111,6 +111,9 @@ public class RomanConverter {
         return sum;
     }
 
+    private static final String usage =
+        "Usage: With 1 argument, the argument is converted from roman to decimal and printed to standard output. With 0 arguments, roman numerals are read from standard input one per line, and converted and printed to standard output.";
+
     public static void main(String[] args) {
         try {
             if (args.length == 1) {
@@ -128,7 +131,7 @@ public class RomanConverter {
                 }
                 System.exit(0);
             } else {
-                System.err.println("You should provide 0 or 1 arguments.");
+                System.err.println(usage);
                 System.exit(1);
             }
         } catch (IllegalArgumentException e) {
