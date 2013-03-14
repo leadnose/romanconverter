@@ -1,7 +1,27 @@
+WHAT
+
 A simple program to convert roman numerals to their decimal
 equivalents. May also convert strings that aren't sensible roman
 numerals, such as XIIIII, which would be written as XV normally. Can
 also be used as a library.
+
+COMPILATION
+
+If needed, adjust the CLASSPATH variable in the Makefile so that javac
+and java can find your junit-libraries.
+
+To compile, just run
+
+$ make
+
+To run the tests, run
+
+$ make test
+
+USAGE
+
+After compilation, you can run the program from the command line just
+like any other normal Java program.
 
 With 1 argument, the argument is converted from roman to decimal and
 printed to standard output. With 0 arguments, roman numerals are read
